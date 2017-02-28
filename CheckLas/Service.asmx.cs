@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using System.Web.Services;
 
@@ -17,14 +18,14 @@ namespace CheckLas
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class Service : System.Web.Services.WebService
     {
         public static List<connlist> clist = new List<connlist>();
 
         [WebMethod]
-        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-        public string Login()
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
+        public void Login()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
@@ -40,7 +41,14 @@ namespace CheckLas
                 guid = g.ToString();
                 clist.Add(new connlist { _conn = conn, _guid = guid});
             }
-            return guid;
+            //return guid;
+            List<string> abc = new List<string>();
+            abc.Add(guid);
+            abc.Add(guid + "----");
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Clear();
+            Context.Response.ContentType = "application/json";
+            Context.Response.Write(js.Serialize(abc));
         }
 
         [WebMethod]

@@ -241,6 +241,68 @@ namespace WSTest.Checklas {
         
         private double priceField;
         
+        private string u_kmpanyaField;
+        
+        private string u_ebatField;
+        
+        private string u_lastikTipiField;
+        
+        private string u_yukEndeksField;
+        
+        private string u_hizEndeksField;
+        
+        private string u_rftField;
+        
+        private string u_isaretlerField;
+        
+        private string u_oeField;
+        
+        private string u_oeMarkField;
+        
+        private string u_menseiField;
+        
+        private string u_yakitPerField;
+        
+        private string u_desibelField;
+        
+        private string u_islakZeminField;
+        
+        private string u_kullanimField;
+        
+        private string u_eMarkField;
+        
+        private string u_yayindaMiField;
+        
+        private string u_renkField;
+        
+        private string u_konsantreOraniField;
+        
+        private string u_aModelField;
+        
+        private string u_alasimField;
+        
+        private string u_tonajField;
+        
+        private string u_devirHiziField;
+        
+        private string u_amperField;
+        
+        private string u_xlField;
+        
+        private string u_mevsimField;
+        
+        private string u_basincField;
+        
+        private string u_portalField;
+        
+        private string u_eTicaretField;
+        
+        private string u_desenField;
+        
+        private string u_katalogField;
+        
+        private string u_markaField;
+        
         /// <remarks/>
         public string ItemCode {
             get {
@@ -288,6 +350,316 @@ namespace WSTest.Checklas {
             }
             set {
                 this.priceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_kmpanya {
+            get {
+                return this.u_kmpanyaField;
+            }
+            set {
+                this.u_kmpanyaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_ebat {
+            get {
+                return this.u_ebatField;
+            }
+            set {
+                this.u_ebatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_lastikTipi {
+            get {
+                return this.u_lastikTipiField;
+            }
+            set {
+                this.u_lastikTipiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_yukEndeks {
+            get {
+                return this.u_yukEndeksField;
+            }
+            set {
+                this.u_yukEndeksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_hizEndeks {
+            get {
+                return this.u_hizEndeksField;
+            }
+            set {
+                this.u_hizEndeksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_rft {
+            get {
+                return this.u_rftField;
+            }
+            set {
+                this.u_rftField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_isaretler {
+            get {
+                return this.u_isaretlerField;
+            }
+            set {
+                this.u_isaretlerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_oe {
+            get {
+                return this.u_oeField;
+            }
+            set {
+                this.u_oeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_oeMark {
+            get {
+                return this.u_oeMarkField;
+            }
+            set {
+                this.u_oeMarkField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_mensei {
+            get {
+                return this.u_menseiField;
+            }
+            set {
+                this.u_menseiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_yakitPer {
+            get {
+                return this.u_yakitPerField;
+            }
+            set {
+                this.u_yakitPerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_desibel {
+            get {
+                return this.u_desibelField;
+            }
+            set {
+                this.u_desibelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_islakZemin {
+            get {
+                return this.u_islakZeminField;
+            }
+            set {
+                this.u_islakZeminField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_kullanim {
+            get {
+                return this.u_kullanimField;
+            }
+            set {
+                this.u_kullanimField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_eMark {
+            get {
+                return this.u_eMarkField;
+            }
+            set {
+                this.u_eMarkField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_yayindaMi {
+            get {
+                return this.u_yayindaMiField;
+            }
+            set {
+                this.u_yayindaMiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_renk {
+            get {
+                return this.u_renkField;
+            }
+            set {
+                this.u_renkField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_konsantreOrani {
+            get {
+                return this.u_konsantreOraniField;
+            }
+            set {
+                this.u_konsantreOraniField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_aModel {
+            get {
+                return this.u_aModelField;
+            }
+            set {
+                this.u_aModelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_alasim {
+            get {
+                return this.u_alasimField;
+            }
+            set {
+                this.u_alasimField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_tonaj {
+            get {
+                return this.u_tonajField;
+            }
+            set {
+                this.u_tonajField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_devirHizi {
+            get {
+                return this.u_devirHiziField;
+            }
+            set {
+                this.u_devirHiziField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_amper {
+            get {
+                return this.u_amperField;
+            }
+            set {
+                this.u_amperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_xl {
+            get {
+                return this.u_xlField;
+            }
+            set {
+                this.u_xlField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_mevsim {
+            get {
+                return this.u_mevsimField;
+            }
+            set {
+                this.u_mevsimField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_basinc {
+            get {
+                return this.u_basincField;
+            }
+            set {
+                this.u_basincField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_portal {
+            get {
+                return this.u_portalField;
+            }
+            set {
+                this.u_portalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_eTicaret {
+            get {
+                return this.u_eTicaretField;
+            }
+            set {
+                this.u_eTicaretField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_desen {
+            get {
+                return this.u_desenField;
+            }
+            set {
+                this.u_desenField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_katalog {
+            get {
+                return this.u_katalogField;
+            }
+            set {
+                this.u_katalogField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string U_marka {
+            get {
+                return this.u_markaField;
+            }
+            set {
+                this.u_markaField = value;
             }
         }
     }

@@ -45,6 +45,37 @@
           <s:element minOccurs="0" maxOccurs="1" name="ItmsGrpCod" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ItmsGrpNam" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_kmpanya" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_ebat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_lastikTipi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_yukEndeks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_hizEndeks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_rft" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_isaretler" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_oe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_oeMark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_mensei" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_yakitPer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_desibel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_islakZemin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_kullanim" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_eMark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_yayindaMi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_renk" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_konsantreOrani" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_aModel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_alasim" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_tonaj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_devirHizi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_amper" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_xl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_mevsim" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_basinc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_portal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_eTicaret" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_desen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_katalog" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="U_marka" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetItems">
