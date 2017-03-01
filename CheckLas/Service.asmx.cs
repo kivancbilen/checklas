@@ -24,7 +24,7 @@ namespace CheckLas
         public static List<connlist> clist = new List<connlist>();
 
         [WebMethod]
-        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Xml)]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
         public void Login()
         {
             SqlConnection conn = new SqlConnection();
@@ -33,7 +33,14 @@ namespace CheckLas
             "Initial Catalog=Checklas;" +
             "User id=sa;" +
             "Password=Checklas2017;";
-            conn.Open();
+            //if (string.Equals(user, "manager"))
+            //{
+                conn.Open();
+            //}
+            //else
+            //{
+
+            //}
             string guid = "";
             if (conn.State == System.Data.ConnectionState.Open)
             {
@@ -42,18 +49,20 @@ namespace CheckLas
                 clist.Add(new connlist { _conn = conn, _guid = guid});
             }
             //return guid;
-            List<string> abc = new List<string>();
-            abc.Add(guid);
-            abc.Add(guid + "----");
+            //List<string> abc = new List<string>();
+            //abc.Add(guid);
+            //abc.Add(guid + "----");
+            List<LoginList> ll = new List<LoginList>();
+            ll.Add(new LoginList { sessionId = guid });
             JavaScriptSerializer js = new JavaScriptSerializer();
             Context.Response.Clear();
             Context.Response.ContentType = "application/json";
-            Context.Response.Write(js.Serialize(abc));
+            Context.Response.Write(js.Serialize(ll));
         }
 
         [WebMethod]
         [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
-        public ItemResponse GetItemsByBrand(string guid, string brand)
+        public void GetItemsByBrand(string guid, string brand)
         {
             SqlConnection conn = clist.Where(z => z._guid == guid).Select(x => x._conn).First();
             string query = "select OITM.ItemCode,ItemName,OITB.ItmsGrpCod,ItmsGrpNam,isnull(Price,0),        U_kmpanya	,U_ebat	,U_lastikTipi	,U_yukEndeks	,U_hizEndeks	,U_rft	,U_isaretler	,U_oe	,U_oeMark	,U_mensei	,U_yakitPer	,U_desibel	,U_islakZemin	,U_kullanim	U_eMark	,U_yayindaMi	,U_renk	,U_konsantreOrani	,U_aModel	,U_alasim	,U_tonaj	,U_devirHizi	,U_amper	,U_xl	,U_mevsim	,U_basinc	,U_portal	,U_eTicaret	,U_desen	,U_katalog,U_marka, Price from OITM inner join OITB on OITB.ItmsGrpCod = OITM.ItmsGrpCod inner join ITM1 on ITM1.ItemCode = OITM.ItemCode and ITM1.PriceList=1 where OITM.U_marka='" + brand + "'";
@@ -64,14 +73,20 @@ namespace CheckLas
             results.Rows.OfType<DataRow>();
 
             List<Item> itlist = results.DataTableToList<Item>();
-            
-            
+
+
             //for (int i = 0; i < results.Rows.Count; i++)
             //{
             //    var a = results.Rows[i];
             //    itlist.Add(new Item { ItemCode = a[0].ToString(), ItemName = a[1].ToString(), ItmsGrpCod = a[2].ToString(), ItmGrpName = a[3].ToString(), Price = Convert.ToDouble(a[4]) });
             //}
-            return new ItemResponse { responseflag = true, itemlist = itlist };
+            ItemResponse ret =  new ItemResponse { responseflag = true, itemlist = itlist };
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Clear();
+            Context.Response.ContentType = "application/json";
+            Context.Response.Write(js.Serialize(ret));
+
         }
 
         [WebMethod]
@@ -108,10 +123,36 @@ namespace CheckLas
             return new ItemResponse { responseflag = true, itemlist = itlist };
         }
 
+        [WebMethod]
+        [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
+        public void Check(string guid)
+        {
+            SqlConnection conn = clist.Where(z => z._guid == guid).Select(x => x._conn).First();
+            bool check;
+            if (conn.State == ConnectionState.Open)
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Clear();
+            Context.Response.ContentType = "application/json";
+            Context.Response.Write(js.Serialize(check));
+        }
+
         public class connlist 
         {
             public SqlConnection _conn { get; set; }
             public string _guid { get; set; }
+        }
+
+        public class LoginList
+        {
+            public string sessionId { get; set; }
+            public DateTime expires{ get; set; }
         }
 
         public class Item
